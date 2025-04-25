@@ -2,12 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ion++</title>
 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.testimonials {
+    margin-top: 50px;
+}
+
+.testimonials .item {
+    display: none;
+    text-align: center;
+}
+
+.testimonials .active.item {
+    display: block;
+}
+
+.testimonials blockquote {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    padding: 0;
+    quotes: "“" "”" "‘" "’";
+}
+
+.testimonials blockquote:before {
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 10px;
+    vertical-align: -0.4em;
+    color: #ccc;
+}
+
+.testimonials blockquote p {
+    display: inline;
+}
+
+.carousel-info {
+    margin-top: 20px;
+}
+
+.carousel-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.carousel-info .testimonials-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #000;
+}
+
+.carousel-info .testimonials-post {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+}
+</style>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,7 +95,7 @@
 							<p>So, what do you need? You could go for ticking business requirements on a sheet of paper and hope that they are done and will not come back as production incidends. Or you could worry less about building the software applications and think more about the business.</p>
 						</blockquote>
 						<div class="carousel-info">
-							<a href="https://uk.linkedin.com/in/ionionascu" onclick="return false;"><img alt="Ion Ionascu" src="https://2.gravatar.com/avatar/6f019996b078ce5696e858b15d060e30269629ec672beb3e81322d6fe839a126?s=300" width="300" height="300" class="pull-left"></a>
+							<a href="https://uk.linkedin.com/in/ionionascu" onclick="return false;"><img alt="Ion Ionascu" src="https://2.gravatar.com/avatar/6f019996b078ce5696e858b15d060e30269629ec672beb3e81322d6fe839a126?s=450" width="300" height="300" class="pull-left"></a>
 							<div class="pull-left">
 								<a href="https://uk.linkedin.com/in/ionionascu" onclick="return false;"><span class="testimonials-name">Ion Ionascu</span></a> <span class="testimonials-post">Creator of awesome software at ion++</span>
 							</div>
