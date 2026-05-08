@@ -1,120 +1,541 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code ≠ Product → Architect ∴ Evolve (ion++)</title>
-<meta name="description" content="Ion++ creates high-quality, efficient software solutions for businesses. We prioritize great development practices to ensure your software is not only functional but also reliable and scalable.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ION++ — Senior contract engineering · oleaca.com</title>
+<meta name="description" content="ION++ is the consulting practice of Ion Ionascu — a UK-based contract Technical Architect and Lead Developer with 20+ years building secure, high-scale platforms on AWS, Java and Rust." />
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta property="og:title" content="ION++ — Senior contract engineering" />
+<meta property="og:description" content="The consulting practice of Ion Ionascu — UK-based contract Technical Architect and Lead Developer. AWS, Java, Rust, 20+ years in regulated, high-traffic environments." />
+<meta property="og:url" content="https://www.oleaca.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 
-<style>
-body {
-    font-family: "Fira Code", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    background-color: #f4f4f4;
-    color: #333333;
-}
-
-.testimonials {
-    margin-top: 50px;
-}
-
-.testimonials .item {
-    display: none;
-    text-align: center;
-}
-
-.testimonials .active.item {
-    display: block;
-}
-
-.testimonials blockquote {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin: 0 0 20px;
-    padding: 0;
-    quotes: "“" "”" "‘" "’";
-}
-
-.testimonials blockquote:before {
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 10px;
-    vertical-align: -0.4em;
-    color: #ccc;
-}
-/*
-.testimonials blockquote p {
-    display: inline;
-}
-*/
-.carousel-info {
-    margin-top: 20px;
-}
-
-.carousel-info img {
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.carousel-info .testimonials-name {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #1E90FF;
-}
-
-.carousel-info .testimonials-post {
-    display: block;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.highlight {
-    color: #550303bd;
-    font-weight: bold;
-}
-</style>
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-
+<link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-	<div class="container content">
-		<div class="row">
-			<div class="col-lg-10 offset-lg-1">
-				<div class="testimonials">
-					<div class="active item">
-						<blockquote>
-                            <p>In every modern industry, software is the nervous system, coordinating actions, decisions, and growth. But writing code isn't enough. The real value lies in building systems that are scalable, resilient, and deeply aligned with purpose.</p>
-                            <p>Plenty of teams can deliver features. Few can craft systems that evolve with you - systems designed to be intuitive under pressure, maintainable at scale, and calm in the face of complexity.</p>
-                            <p>The difference is architecture. It's not just about solving a problem today, but about anticipating how that solution will adapt tomorrow. It's the ability to design with clarity, reduce friction, and build structures that last.</p>
-                            <p>Whether you're launching a product, transforming operations, or rethinking an entire platform - what you build should not just work. It should fit. Seamlessly. Elegantly. Enduringly.</p>
-                            <p>Work with those who don't just write software - but engineer futures.</p>
-                        </blockquote>
-						<div class="carousel-info">
-							<a href="https://uk.linkedin.com/in/ionionascu" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" type="text/html" aria-label="Visit Ion Ionascu's LinkedIn profile">
-                                <img alt="Ion Ionascu" src="https://2.gravatar.com/avatar/6f019996b078ce5696e858b15d060e30269629ec672beb3e81322d6fe839a126?s=450" width="300" height="300" class="pull-left">
-                            </a>
-							<div class="pull-left">
-								<a href="https://uk.linkedin.com/in/ionionascu" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" type="text/html" aria-label="Visit Ion Ionascu's LinkedIn profile">
-                                    <span class="testimonials-name">Ion Ionascu</span>
-                                </a> <span class="testimonials-post">Creator of awesome software at ion++</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">++</span>
+      <span class="brand-name">ION++</span>
+      <span class="brand-meta">/ oleaca.com</span>
+    </a>
+    <div class="nav-links">
+      <a href="#capabilities">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#industries">Industries</a>
+      <a href="#about">About</a>
+      <a href="#medetra">MedEtra</a>
+      <a href="#writing">Writing</a>
+    </div>
+    <a class="nav-cta" href="https://www.linkedin.com/in/ionionascu/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Ion Ionascu on LinkedIn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      Connect on LinkedIn
+    </a>
+  </div>
+</nav>
+
+<section class="hero section" data-variant="default">
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div class="hero-status">
+      <span class="pulse"></span>
+      <span>ION++ Ltd · UK consulting practice · est. 2013</span>
+    </div>
+
+    <h1>
+      Senior contract engineering <em>for systems</em> that can&rsquo;t afford to fail.
+    </h1>
+
+    <p class="hero-sub">
+      ION++ is the consulting practice of <strong>Ion Ionascu</strong> — a contract Technical Architect &amp; Lead Developer with 20+ years building secure, high-scale platforms on AWS, Java &amp; Rust for media, telecoms, public sector and fintech.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://www.linkedin.com/in/ionionascu/" target="_blank" rel="noopener noreferrer" aria-label="View Ion Ionascu's profile on LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        View profile on LinkedIn
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a class="btn-ghost" href="#capabilities">
+        See the work
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="label">Based</div>
+        <div class="value">London, UK</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Right to work</div>
+        <div class="value">UK <em>&amp;</em> EU</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Practice</div>
+        <div class="value">Architecture <em>&amp;</em> delivery</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Experience</div>
+        <div class="value">20<em>+</em> years</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 / The work</div>
+      <h2>Senior engineering across the full lifecycle — <em>architect, build, operate.</em></h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-num">01 —</div>
+        <h3 class="cap-title">Cloud architecture on AWS</h3>
+        <p class="cap-desc">Designing and operating multi-account, multi-region AWS landscapes for systems that need to be both fast and audit-ready.</p>
+        <div class="cap-tags">
+          <span class="tag">Well-Architected</span>
+          <span class="tag">Multi-account</span>
+          <span class="tag">Security</span>
+          <span class="tag">FinOps</span>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="cap-num">02 —</div>
+        <h3 class="cap-title">Platform &amp; API engineering</h3>
+        <p class="cap-desc">Hands-on Java/Spring and Rust microservices, event streams and robust REST APIs — production code, not slideware.</p>
+        <div class="cap-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Rust</span>
+          <span class="tag">Event-driven</span>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="cap-num">03 —</div>
+        <h3 class="cap-title">Identity &amp; high-traffic web</h3>
+        <p class="cap-desc">Authentication and edge platforms operating at tens of millions of users — global delivery, web application firewalls and edge compute.</p>
+        <div class="cap-tags">
+          <span class="tag">CDN</span>
+          <span class="tag">WAF</span>
+          <span class="tag">Edge compute</span>
+          <span class="tag">Identity</span>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="cap-num">04 —</div>
+        <h3 class="cap-title">Infrastructure as Code</h3>
+        <p class="cap-desc">Terraform-first delivery: reproducible environments, OIDC-federated CI/CD, and pipelines engineers actually trust.</p>
+        <div class="cap-tags">
+          <span class="tag">Terraform</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">OIDC</span>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="cap-num">05 —</div>
+        <h3 class="cap-title">GenAI in engineering workflows</h3>
+        <p class="cap-desc">Pragmatic adoption of Copilot, Claude Code and Codex inside large enterprise codebases — with guardrails for security and quality. AWS Community Builder for AI Engineering.</p>
+        <div class="cap-tags">
+          <span class="tag">Copilot</span>
+          <span class="tag">Claude Code</span>
+          <span class="tag">Codex</span>
+          <span class="tag">AWS CB · AI</span>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="cap-num">06 —</div>
+        <h3 class="cap-title">Cross-cloud &amp; integration</h3>
+        <p class="cap-desc">Bridging AWS with Azure and GCP — secure data access without replication, BigQuery analytics pipelines, hybrid VPNs.</p>
+        <div class="cap-tags">
+          <span class="tag">AWS↔Azure</span>
+          <span class="tag">AWS↔GCP</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">Site-to-site VPN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="stack">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 / Stack</div>
+      <h2>A deep, opinionated stack — <em>hand-picked for production.</em></h2>
+    </div>
+    <div class="stack">
+      <div class="stack-group">
+        <div class="stack-label">Languages</div>
+        <ul>
+          <li class="primary">Java</li>
+          <li class="primary">Rust</li>
+          <li>TypeScript</li>
+          <li>Node.js</li>
+          <li>Swift</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Cloud</div>
+        <ul>
+          <li class="primary">AWS</li>
+          <li class="primary">GCP</li>
+          <li>Serverless compute</li>
+          <li>Object storage</li>
+          <li>Managed databases</li>
+          <li>API gateways</li>
+          <li>CDN &amp; edge</li>
+          <li>WAF</li>
+          <li>Streaming &amp; messaging</li>
+          <li>BigQuery</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Frameworks</div>
+        <ul>
+          <li class="primary">Spring Boot</li>
+          <li class="primary">Spring Framework</li>
+          <li>React</li>
+          <li>SwiftUI</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Platform &amp; data</div>
+        <ul>
+          <li class="primary">Terraform</li>
+          <li class="primary">Kafka</li>
+          <li class="primary">SQL</li>
+          <li>GitHub Actions</li>
+          <li>Jenkins</li>
+          <li>Kafka Connect</li>
+          <li>AWS MSK</li>
+          <li>Oracle</li>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>Couchbase</li>
+          <li>DynamoDB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="industries">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">03 / Industries</div>
+      <h2>Track record in <em>regulated, high-traffic</em> environments.</h2>
+    </div>
+    <div class="industries">
+      <div class="industry">
+        <div>
+          <h3 class="industry-name">Media &amp; entertainment</h3>
+          <div class="industry-meta">Sky (Comcast group) · AKQA / Nike</div>
+          <p class="industry-desc"><a href="https://id.sky.com" target="_blank" rel="noopener noreferrer">Identity platforms</a>, edge delivery and microservices behind sky.com — supporting Sky Sports, Sky Go and the wider Sky digital portfolio.</p>
+        </div>
+        <div class="industry-scale">
+          <span class="num">30M</span>
+          user profiles
+        </div>
+      </div>
+      <div class="industry">
+        <div>
+          <h3 class="industry-name">Telecoms</h3>
+          <div class="industry-meta">Vodafone Group</div>
+          <p class="industry-desc">Multi-region AWS architecture and standards-based REST APIs powering Vodafone&rsquo;s <a href="https://offers.vodafone.com/" target="_blank" rel="noopener noreferrer">offers platform</a> across multiple operating companies and external partners.</p>
+        </div>
+        <div class="industry-scale">
+          <span class="num">10+</span>
+          partners · 7+ OpCos
+        </div>
+      </div>
+      <div class="industry">
+        <div>
+          <h3 class="industry-name">Public sector</h3>
+          <div class="industry-meta">UK Home Office (via consultancy) · Romanian National Statistics</div>
+          <p class="industry-desc">Cross-cloud secure data access (AWS↔Azure) and a domain-specific language for automated survey validation deployed at national scale.</p>
+        </div>
+        <div class="industry-scale">
+          <span class="num">Gov</span>
+          regulated, audited
+        </div>
+      </div>
+      <div class="industry">
+        <div>
+          <h3 class="industry-name">Fintech &amp; banking</h3>
+          <div class="industry-meta">Neosurf · Barclays · RSA · CEC Bank · Gamesys</div>
+          <p class="industry-desc">Java/Spring backends for underwriting, internal banking applications and high-throughput transaction processing in regulated environments — most recently on contract with Neosurf.</p>
+        </div>
+        <div class="industry-scale">
+          <span class="num">Reg.</span>
+          FCA / PRA grade
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 / Track record</div>
+      <h2>Numbers that <em>matter to a hiring manager.</em></h2>
+    </div>
+    <div class="trust">
+      <div class="trust-item">
+        <div class="trust-num">20<em>+</em></div>
+        <div class="trust-label">Years building production software</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">12<em>+</em></div>
+        <div class="trust-label">Years hands-on AWS in production</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">30<span class="unit">M</span></div>
+        <div class="trust-label">User profiles supported on <a href="https://id.sky.com" target="_blank" rel="noopener noreferrer">Sky Identity</a></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">2<span class="unit">M</span></div>
+        <div class="trust-label">Daily active users on platforms led</div>
+      </div>
+    </div>
+
+    <div class="certs">
+      <div class="certs-label">
+        Certifications &nbsp;·&nbsp;
+        <a href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer" style="color:var(--muted)">
+          credly.com/users/ion-ionascu
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+      </div>
+      <div class="cert-list">
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">AWS</span>
+          Solutions Architect — Professional
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">AWS</span>
+          Security — Specialty
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">AWS</span>
+          Developer — Associate
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://aws.amazon.com/developer/community/community-builders/" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">AWS</span>
+          Community Builder — AI Engineering
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">HCP</span>
+          Terraform Associate
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">VMW</span>
+          Spring Professional
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+        <a class="cert-chip" href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">
+          <span class="cert-mark">ORC</span>
+          Oracle Certified Java Programmer
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">05 / About</div>
+      <h2>The person <em>behind ION++.</em></h2>
+    </div>
+    <div class="about">
+      <aside class="about-aside">
+        <div class="portrait">
+          <img src="assets/portrait.png" alt="Ion Ionascu" />
+        </div>
+        <div class="about-meta">
+          <div class="row"><span class="k">name</span><span class="v">Ion Ionascu</span></div>
+          <div class="row"><span class="k">role</span><span class="v">Technical Architect / Lead Developer</span></div>
+          <div class="row"><span class="k">company</span><span class="v">ION++ Ltd</span></div>
+          <div class="row"><span class="k">based</span><span class="v">London, UK</span></div>
+          <div class="row"><span class="k">languages</span><span class="v">EN · RO</span></div>
+        </div>
+      </aside>
+      <div class="about-body">
+        <p class="lead">
+          I&rsquo;ve been writing production software for 20 years, in environments where downtime is measured in lost revenue and headlines.
+        </p>
+        <p>
+          I work as an <strong>independent contractor through ION++ Ltd</strong>, a UK-registered company. My focus is the messy middle — the architecture and lead-developer work where someone has to own end-to-end delivery of a system that&rsquo;s real, regulated, and operating at scale.
+        </p>
+        <p>
+          I&rsquo;ve been the architect behind <strong>Sky&rsquo;s <a href="https://id.sky.com" target="_blank" rel="noopener noreferrer">Identity Portal</a></strong> (~30M user profiles), the technical lead on <strong>Vodafone&rsquo;s <a href="https://offers.vodafone.com/" target="_blank" rel="noopener noreferrer">offers platform</a></strong> across 7+ operating companies, and the cloud engineer on cross-cloud proofs-of-concept for the <strong>UK Home Office</strong>. Spring since 1.2; Java since 1.4; AWS for over twelve years; Rust and AI engineering as the current frontier.
+        </p>
+        <p>
+          I&rsquo;m equally comfortable producing a roadmap that earns board confidence and shipping the Java, Rust and Terraform that delivers it — from a fixed-fee architecture review to a long-running lead-developer engagement.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="medetra">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">06 / Independent work</div>
+      <h2>Independent products, <em>shipped end-to-end.</em></h2>
+    </div>
+    <div class="product">
+      <div>
+        <div class="product-lockup">
+          <img class="product-logo" src="https://medetra.app/assets/logo_new_120x120_3b6aee1e0cf851589c8c3a1e13a1651a.png" alt="MedEtra app icon" width="56" height="56" />
+          <div class="product-lockup-text">
+            <div class="product-wordmark">MedEtra</div>
+            <div class="product-eyebrow">iOS · 2025–present</div>
+          </div>
+        </div>
+        <h3>A privacy-first iOS app for organising health information for yourself and people you care about.</h3>
+        <p>
+          Designed and shipped solo: <strong>SwiftUI</strong> frontend with a mixed cloud backend across <strong>Firebase</strong> and <strong>AWS</strong>, including <strong>Rust Lambda</strong> services, <strong>DynamoDB</strong> workloads, and <strong>Grafana</strong> observability. StoreKit 2 entitlements, optional iCloud sync via CloudKit, GDPR-aligned local-first data — the same engineering rigour I bring to client work, applied to my own product.
+        </p>
+        <p>
+          GenAI is used heavily throughout delivery for code generation and iteration, especially with <strong>Claude Code</strong>, <strong>GitHub Copilot</strong>, and <strong>Codex</strong>. AI-powered summaries are also in active work-in-progress using <strong>OpenAI APIs</strong>.
+        </p>
+        <div class="product-stack">
+          <span class="tag">SwiftUI</span>
+          <span class="tag">Swift</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Rust Lambda</span>
+          <span class="tag">DynamoDB</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">CloudKit</span>
+          <span class="tag">StoreKit 2</span>
+          <span class="tag">Claude Code</span>
+          <span class="tag">GitHub Copilot</span>
+          <span class="tag">Codex</span>
+          <span class="tag">OpenAI APIs (WIP)</span>
+        </div>
+        <div class="product-links">
+          <a class="product-link" href="https://medetra.app" target="_blank" rel="noopener noreferrer">
+            medetra.app
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+          </a>
+          <a class="product-link" href="https://apps.apple.com/us/app/medetra-health-med-log/id6751812151" target="_blank" rel="noopener noreferrer">
+            App Store
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="phone">
+          <img src="assets/medetra.png" alt="MedEtra iOS app screenshot" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="writing">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">07 / Writing</div>
+      <h2>Notes from the field — <em>published essays.</em></h2>
+    </div>
+    <div class="writing">
+      <a class="article" href="https://medium.com/p/79bc43c0822c" target="_blank" rel="noopener noreferrer">
+        <div class="article-tag">AI · Architecture</div>
+        <h3 class="article-title">The Return of Assembly: When LLMs No Longer Need High-Level Languages</h3>
+        <p class="article-blurb">A thought experiment on what happens when LLMs can reason and emit code directly at the hardware level — and what that means for the abstractions we&rsquo;ve built.</p>
+        <div class="article-meta">
+          Read on Medium
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </div>
+      </a>
+      <a class="article" href="https://medium.com/p/d00031bc0b3c" target="_blank" rel="noopener noreferrer">
+        <div class="article-tag">GenAI · Systems</div>
+        <h3 class="article-title">Why Not One-Time-Use Banks (in Terraform)? Gen-AI Says: Maybe.</h3>
+        <p class="article-blurb">Using banking as an intentionally extreme example to explore how Gen-AI and infrastructure-as-code may reshape platform thinking and where real value sits.</p>
+        <div class="article-meta">
+          Read on Medium
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </div>
+      </a>
+      <a class="article" href="https://medium.com/p/3f2200c1683a" target="_blank" rel="noopener noreferrer">
+        <div class="article-tag">AI · Delivery</div>
+        <h3 class="article-title">AI in Software Development: Reading Between the Lines of the DORA 2025 Report</h3>
+        <p class="article-blurb">A working engineer&rsquo;s read of what the latest DORA findings actually say about AI&rsquo;s effect on delivery — beyond the headline numbers.</p>
+        <div class="article-meta">
+          Read on Medium
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+        </div>
+      </a>
+    </div>
+    <div class="writing-foot">
+      <a href="https://medium.com/@ionionascu" target="_blank" rel="noopener noreferrer">
+        All articles on Medium
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3l-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta section" id="cta">
+  <div class="cta-bg"></div>
+  <div class="container cta-inner">
+    <div class="eyebrow" style="margin-bottom:24px">08 / Get in touch</div>
+    <h2>Have a project that needs a <em>senior pair of hands?</em></h2>
+    <p>
+      The fastest way to start a conversation is on LinkedIn — message directly, and you&rsquo;ll get a sensible next step in return.
+    </p>
+    <a class="btn-primary" href="https://www.linkedin.com/in/ionionascu/" target="_blank" rel="noopener noreferrer" aria-label="View Ion Ionascu's profile on LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      View profile on LinkedIn
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <div class="cta-meta">linkedin.com/in/ionionascu &nbsp;·&nbsp; ION++ Ltd &nbsp;·&nbsp; UK &amp; EU right to work</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>ION++ Ltd · Registered in England &amp; Wales</div>
+    <div class="footer-center">© <span id="year">2026</span> oleaca.com</div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/ionionascu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      ·
+      <a href="https://www.credly.com/users/ion-ionascu" target="_blank" rel="noopener noreferrer">Credly</a>
+      ·
+      <a href="https://github.com/ionionascu" target="_blank" rel="noopener noreferrer">GitHub</a>
+      ·
+      <a href="https://medetra.app" target="_blank" rel="noopener noreferrer">MedEtra</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
 </body>
 </html>
