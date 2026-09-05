@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#262624" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="fade" cx="50%" cy="40%" r="65%">
+      <stop offset="30%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="m"><rect width="1200" height="630" fill="url(#fade)"/></mask>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect width="1200" height="630" fill="url(#grid)" mask="url(#m)"/>
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="64" height="64" rx="14" fill="#141414" stroke="#3a3a37"/>
+    <text x="32" y="44" text-anchor="middle" font-family="JetBrains Mono, Menlo, monospace" font-weight="700" font-size="30" fill="#e0b060">++</text>
+    <text x="84" y="44" font-family="JetBrains Mono, Menlo, monospace" font-weight="600" font-size="26" fill="#ededeb">ION++</text>
+    <text x="190" y="44" font-family="JetBrains Mono, Menlo, monospace" font-size="26" fill="#7a7a78">/ oleaca.com</text>
+  </g>
+  <text x="80" y="300" font-family="Inter Tight, Helvetica Neue, Arial, sans-serif" font-weight="500" font-size="104" letter-spacing="-4" fill="#ededeb">Ion Ionascu</text>
+  <text x="80" y="372" font-family="Inter Tight, Helvetica Neue, Arial, sans-serif" font-weight="400" font-size="40" letter-spacing="-1" fill="#b8b8b4">Technical Architect · Principal Software Engineer</text>
+  <line x1="80" y1="430" x2="1120" y2="430" stroke="#3a3a37" stroke-dasharray="4 6"/>
+  <text x="80" y="486" font-family="JetBrains Mono, Menlo, monospace" font-size="26" fill="#e0b060" letter-spacing="1">Java · Rust · AWS · Claude Code</text>
+  <text x="80" y="550" font-family="JetBrains Mono, Menlo, monospace" font-size="22" fill="#7a7a78">Senior contract engineering for systems that can't afford to fail.</text>
+</svg>
