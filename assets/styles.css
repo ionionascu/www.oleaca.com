@@ -1,5 +1,27 @@
 /* ION++ — oleaca.com */
 
+@font-face {
+  font-family: "Inter Tight";
+  src: url("fonts/inter-tight.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("fonts/instrument-serif.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/jetbrains-mono.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
 :root {
   --bg: #0a0a0a;
   --surface: #141414;
@@ -8,7 +30,7 @@
   --border-strong: #3a3a37;
   --fg: #ededeb;
   --fg-dim: #b8b8b4;
-  --muted: #7a7a78;
+  --muted: #999993;
   --accent: oklch(0.78 0.13 75);
   --accent-fg: #0a0a0a;
 
@@ -31,12 +53,15 @@ html, body {
   text-rendering: optimizeLegibility;
   font-feature-settings: "ss01", "cv11";
 }
-body { overflow-x: hidden; }
+html { scroll-padding-top: 76px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+[hidden] { display: none !important; }
 
 a { color: inherit; text-decoration: none; }
 
 /* Inline links inside running text should be clearly visible */
 p a,
+.stack-group a,
 .certs-label a {
   color: color-mix(in oklab, var(--accent) 64%, var(--fg));
   text-decoration: underline;
@@ -46,6 +71,7 @@ p a,
 }
 
 p a:hover,
+.stack-group a:hover,
 .certs-label a:hover {
   color: color-mix(in oklab, var(--accent) 78%, white);
   text-decoration-color: currentColor;
@@ -121,6 +147,7 @@ p a:hover,
   color: var(--fg-dim);
 }
 @media (max-width: 760px) {
+  :root { --density: 0.65; }
   .section-head { grid-template-columns: 1fr; gap: 16px; }
 }
 
@@ -162,7 +189,6 @@ p a:hover,
   color: var(--muted);
 }
 .nav-links a:hover { color: var(--fg); }
-.nav-right { display: flex; align-items: center; gap: 10px; }
 .nav-cta {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono);
@@ -178,7 +204,7 @@ p a:hover,
 /* Mobile menu toggle: hidden on desktop, where the links are always visible */
 .nav-toggle {
   display: none;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   padding: 0;
   border: 1px solid var(--border-strong);
   border-radius: 10px;
@@ -199,14 +225,13 @@ p a:hover,
 .nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
 
-@media (min-width: 761px) {
-  .nav-links[hidden] { display: flex; }
-}
-@media (max-width: 760px) {
-  .nav-toggle { display: flex; }
+@media (max-width: 960px) {
+  .nav-toggle { display: flex; margin-left: auto; margin-right: 10px; }
   .nav-links {
     position: absolute;
     top: 64px; left: 0; right: 0;
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
     flex-direction: column;
     gap: 0;
     padding: 8px var(--gutter) 16px;
@@ -221,18 +246,30 @@ p a:hover,
     color: var(--fg-dim);
   }
   .nav-links a:first-child { border-top: 0; }
-  .nav-links[hidden] { display: none; }
+  /* Without scripting the section links form a second row. */
+  .nav:has(.nav-toggle[hidden]) { position: static; }
+  .nav-inner:has(.nav-toggle[hidden]) { height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 10px; }
+  .nav-toggle[hidden] + .nav-links {
+    position: static;
+    order: 1;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+    gap: 0 16px;
+    padding: 0;
+    border: 0;
+    max-height: none;
+  }
+  .nav-toggle[hidden] + .nav-links a { padding: 10px 0; border: 0; }
 }
 @media (max-width: 420px) {
   .nav-cta-text { display: none; }
-  .nav-cta { padding: 10px; }
+  .nav-cta { width: 44px; height: 44px; justify-content: center; padding: 0; }
   .brand-meta { display: none; }
 }
 
 /* ── Hero ─────────────────────────────────────────── */
 .hero {
-  padding-top: calc(120px * var(--density));
-  padding-bottom: calc(120px * var(--density));
+  padding-block: clamp(52px, 7vw, 96px);
   position: relative;
   overflow: hidden;
   border-top: 0;
@@ -250,28 +287,11 @@ p a:hover,
 }
 .hero-inner { position: relative; }
 
-.hero-status {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 6px 12px;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--surface) 80%, transparent);
+.hero-byline {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--fg-dim);
-  margin-bottom: 28px;
-}
-.hero-status .pulse {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: oklch(0.72 0.18 145);
-  box-shadow: 0 0 0 0 oklch(0.72 0.18 145 / 0.7);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero-status .pulse { animation: pulse 2s infinite; }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.18 145 / 0.5); }
-    50% { box-shadow: 0 0 0 6px oklch(0.72 0.18 145 / 0); }
-  }
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: var(--accent);
+  margin: 0 0 22px;
 }
 
 .hero h1 {
@@ -382,13 +402,6 @@ p a:hover,
   transition: background 200ms ease;
 }
 .cap:hover { background: var(--surface-2); }
-.cap-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
-}
 .cap-title {
   font-family: var(--font-sans);
   font-size: 19px;
@@ -420,7 +433,7 @@ p a:hover,
 /* ── Tech Stack ─────────────────────────────────────────── */
 .stack {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 28px 32px;
   margin-top: 32px;
 }
@@ -442,68 +455,40 @@ p a:hover,
   color: var(--fg-dim);
 }
 .stack-group li.primary { color: var(--fg); }
-@media (max-width: 900px) { .stack { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1000px) { .stack { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .stack { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 540px) { .stack { grid-template-columns: 1fr; } }
 
-/* ── Industries ─────────────────────────────────────────── */
-.industries {
+/* ── Client work ─────────────────────────────────────────── */
+.engagements {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 48px;
 }
-.industry {
-  background: var(--surface);
-  padding: 28px 32px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: start;
+.engagement {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-strong);
 }
-.industry-name {
-  font-family: var(--font-sans);
-  font-size: 18px;
+.engagement-role {
+  font: 12px/1.6 var(--font-mono);
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.engagement h3 {
+  font-size: clamp(22px, 2.2vw, 30px);
   font-weight: 500;
-  letter-spacing: -0.01em;
-  margin: 0 0 6px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  text-wrap: balance;
 }
-.industry-meta {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-.industry-desc {
-  font-size: 13.5px;
-  line-height: 1.55;
+.engagement p:last-child {
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--fg-dim);
   margin: 0;
 }
-.industry-scale {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--accent);
-  text-align: right;
-  white-space: nowrap;
-}
-.industry-scale .num {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--fg);
-  letter-spacing: -0.02em;
-  margin-bottom: 2px;
-}
-@media (max-width: 720px) { .industries { grid-template-columns: 1fr; } }
-@media (max-width: 540px) {
-  .industry { grid-template-columns: 1fr; gap: 16px; }
-  .industry-scale { text-align: left; }
-  .industry-scale .num { display: inline; margin-right: 8px; }
-}
+@media (max-width: 700px) { .engagements { grid-template-columns: 1fr; } }
 
 /* ── Trust signals ─────────────────────────────────────────── */
 .trust {
@@ -535,7 +520,11 @@ p a:hover,
   color: var(--fg-dim);
   line-height: 1.45;
 }
-@media (max-width: 900px) { .trust { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) {
+  .trust { gap: 12px; }
+  .trust-item { padding: 20px 14px; }
+}
 
 .certs {
   margin-top: 56px;
@@ -754,12 +743,12 @@ p a:hover,
   background: #000;
 }
 
-@media (max-width: 900px) { .product { grid-template-columns: 1fr; padding: 32px; gap: 32px; } .product-visual { max-width: 320px; margin: 0 auto; } }
+@media (max-width: 900px) { .product { grid-template-columns: 1fr; padding: 32px; gap: 32px; } .product-visual { width: min(100%, 320px); margin: 0 auto; } }
 
 /* ── Writing ─────────────────────────────────────── */
 .writing {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 .article {
@@ -773,7 +762,7 @@ p a:hover,
   text-decoration: none;
   color: inherit;
   transition: border-color 160ms, transform 160ms, background 160ms;
-  min-height: 260px;
+
 }
 .article:hover {
   border-color: var(--border-strong);
@@ -834,7 +823,7 @@ p a:hover,
   transition: color 120ms, border-color 120ms;
 }
 .writing-foot a:hover { color: var(--fg); border-color: var(--fg); }
-@media (max-width: 900px) { .writing { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .writing { grid-template-columns: 1fr; } }
 
 /* ── CTA ─────────────────────────────────────────── */
 .cta {
